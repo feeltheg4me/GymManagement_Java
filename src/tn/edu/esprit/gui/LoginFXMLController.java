@@ -5,6 +5,7 @@
  */
 package tn.edu.esprit.gui;
 
+import com.sanctionco.jmail.JMail;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import java.net.URL;
 import java.security.SecureRandom;
@@ -279,6 +280,8 @@ public class LoginFXMLController implements Initializable {
             alert.showAndWait();
             return;
         }
+        if (!JMail.isValid(tfEmail2.getText())) 
+            return;
         // Generate a new password
         String newPassword = generateNewPassword(4, 3);
 
@@ -309,7 +312,6 @@ public class LoginFXMLController implements Initializable {
             alert.showAndWait();
 
         } catch (Exception e) {
-            e.printStackTrace();
         }
 
     }

@@ -20,6 +20,7 @@ public class Member {
     private String memberId, adresse, gender, trainingType, status;
     @RegexValidation(pattern = "[A-Za-z]+", message = "Invalid name !")
     private String nom;
+    private String email;
     @RegexValidation(pattern = "\\d{8}", message = "Invalid phone number !")
     private int phone;
     private Date startDate;
